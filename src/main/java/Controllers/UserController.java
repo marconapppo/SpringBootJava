@@ -3,9 +3,7 @@ package Controllers;
 import Entities.User;
 import Infra.IUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,5 +18,17 @@ public class UserController
     public List<User> FindAll()
     {
         return repository.findAll();
+    }
+
+    @GetMapping(value = "/{id}")
+    public User FindById(@PathVariable Long id)
+    {
+        return repository.findById(id).get();
+    }
+
+    @PostMapping
+    public User Insert(@RequestBody User user)
+    {
+        return repository.save(user);
     }
 }
