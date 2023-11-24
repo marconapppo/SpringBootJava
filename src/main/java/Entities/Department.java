@@ -1,7 +1,13 @@
 package Entities;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "TB_DEPARTMENT")
 public class Department
 {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
     private String Name;
 
