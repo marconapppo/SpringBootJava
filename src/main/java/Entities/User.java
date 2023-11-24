@@ -2,8 +2,6 @@ package Entities;
 
 import jakarta.persistence.*;
 
-import javax.naming.Name;
-
 @Entity
 @Table(name = "TB_USER")
 public class User
