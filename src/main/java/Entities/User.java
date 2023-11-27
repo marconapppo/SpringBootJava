@@ -14,7 +14,7 @@ public class User
 
     @ManyToOne
     @JoinColumn(name = "DEPARTMENT_ID")
-    private Department Department;
+    public Department Department;
 
     public String getName() {
         return Name;
